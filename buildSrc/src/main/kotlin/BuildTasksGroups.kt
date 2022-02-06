@@ -1,0 +1,18 @@
+object BuildTasksGroups {
+    const val ANDROID = "android"
+    const val KOTLIN = "kotlin"
+    const val KOTLIN_ANDROID = "kotlin-android"
+    const val ANDROID_LIBRARY = "com.android.library"
+    const val KAPT = "kapt"
+    const val KOTLIN_ALL_OPEN = "kotlin-allopen"
+    const val KOTLIN_PARCELIZE = "kotlin-parcelize"
+    const val ANDROID_APP = "com.android.application"
+    const val ANDROID_NAVIGATION_SAFE_ARGS = "androidx.navigation.safeargs.kotlin"
+    const val FIREBASE_CRASHLYTICS = "com.google.firebase.crashlytics"
+    const val FIREBASE_PERF = "com.google.firebase.firebase-perf"
+    const val GOOGLE_SERVICES = "com.google.gms.google-services"
+    const val FIREBASE_APP_DISTRIBUTION = "com.google.firebase.appdistribution"
+    const val FORMATTING = "formatting"
+    const val GIT_HOOKS = "git hooks"
+    const val VERIFICATION = "verification"
+}
