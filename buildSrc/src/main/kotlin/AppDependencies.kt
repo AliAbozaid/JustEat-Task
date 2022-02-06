@@ -1,8 +1,6 @@
 object AppDependencies {
     const val CONSTRAINT_LAYOUT =
         "androidx.constraintlayout:constraintlayout:${BuildDependenciesVersions.CONSTRAINT_LAYOUT}"
-    const val APPCOMPAT = "androidx.appcompat:appcompat:${BuildDependenciesVersions.APPCOMPAT}"
-    const val CORE_KTX = "androidx.core:core-ktx:${BuildDependenciesVersions.CORE_KTX}"
 
     //  TODO   const val KOTLIN_STD_LIB = "org.jetbrains.kotlin:kotlin-stdlib:${BuildDependenciesVersions.KOTLIN}"
     const val KOTLIN = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${BuildDependenciesVersions.KOTLIN}"
@@ -34,10 +32,6 @@ object AppDependencies {
 
     // common
     const val TIMBER = "com.jakewharton.timber:timber:${BuildDependenciesVersions.TIMBER}"
-    const val SECURITY_CRYPTO =
-        "androidx.security:security-crypto:${BuildDependenciesVersions.SECURITY_CRYPTO}"
-    const val MATERIAL =
-        "com.google.android.material:material:${BuildDependenciesVersions.MATERIAL}"
 
     const val KTLINT = "com.pinterest:ktlint:${BuildDependenciesVersions.KTLINT}"
 
@@ -47,8 +41,6 @@ object AppDependencies {
 
     // coil
     const val COIL = "io.coil-kt:coil:${BuildDependenciesVersions.COIL}"
-
-    const val PAGING = "androidx.paging:paging-runtime:${BuildDependenciesVersions.PAGING}"
 
 
 }

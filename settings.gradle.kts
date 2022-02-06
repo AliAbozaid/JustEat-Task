@@ -5,4 +5,3 @@ include(
     ":feature:restaurants"
 )
 rootProject.buildFileName = "build.gradle.kts"
-//rootProject.name = "JustEat"
