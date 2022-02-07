@@ -1,7 +1,8 @@
 object AppDependencies {
     const val CONSTRAINT_LAYOUT =
         "androidx.constraintlayout:constraintlayout:${BuildDependenciesVersions.CONSTRAINT_LAYOUT}"
-
+    const val APPCOMPAT = "androidx.appcompat:appcompat:${BuildDependenciesVersions.APPCOMPAT}"
+    const val MATERIAL = "com.google.android.material:material:${BuildDependenciesVersions.MATERIAL}"
     //  TODO   const val KOTLIN_STD_LIB = "org.jetbrains.kotlin:kotlin-stdlib:${BuildDependenciesVersions.KOTLIN}"
     const val KOTLIN = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${BuildDependenciesVersions.KOTLIN}"
 

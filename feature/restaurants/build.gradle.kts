@@ -1,5 +1,4 @@
 import dependencies.DebugDependencies
-import dependencies.FirebaseDependencies
 import dependencies.NavigationDependencies
 import extensions.addTestsDependencies
 import extensions.implementation
@@ -62,6 +61,8 @@ android {
 }
 
 dependencies {
+    implementation(project(":feature:navigation"))
+    implementation(project(":feature:common"))
 
     implementation(NavigationDependencies.NAVIGATION_LIBRARIES)
     implementation(AppDependencies.CONSTRAINT_LAYOUT)

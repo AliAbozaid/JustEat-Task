@@ -1,4 +1,4 @@
-package io.aliabozid.justeat.restaurants.model
+package io.aliabozid.justeat.restaurants.data.model
 
 data class Restaurant(
 	val name: String?,
