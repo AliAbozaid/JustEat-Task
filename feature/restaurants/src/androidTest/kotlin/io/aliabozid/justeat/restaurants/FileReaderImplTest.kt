@@ -3,10 +3,10 @@ package io.aliabozid.justeat.restaurants
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
 import androidx.test.platform.app.InstrumentationRegistry
 import io.aliabozid.justeat.restaurants.data.filereader.FileReaderImpl
+import java.io.FileNotFoundException
 import org.junit.Assert.assertEquals
 import org.junit.Test
 import org.junit.runner.RunWith
-import java.io.FileNotFoundException
 
 @RunWith(AndroidJUnit4ClassRunner::class)
 class FileReaderImplTest {
