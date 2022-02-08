@@ -1,9 +1,13 @@
 object AppDependencies {
     const val CONSTRAINT_LAYOUT =
         "androidx.constraintlayout:constraintlayout:${BuildDependenciesVersions.CONSTRAINT_LAYOUT}"
-
+    const val APPCOMPAT = "androidx.appcompat:appcompat:${BuildDependenciesVersions.APPCOMPAT}"
+    const val MATERIAL = "com.google.android.material:material:${BuildDependenciesVersions.MATERIAL}"
     //  TODO   const val KOTLIN_STD_LIB = "org.jetbrains.kotlin:kotlin-stdlib:${BuildDependenciesVersions.KOTLIN}"
     const val KOTLIN = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${BuildDependenciesVersions.KOTLIN}"
+
+    const val MOSHI = "com.squareup.moshi:moshi-kotlin:${BuildDependenciesVersions.MOSHI}"
+    const val MOSHI_CODEGEN = "com.squareup.moshi:moshi-kotlin-codegen:${BuildDependenciesVersions.MOSHI}"
 
     // coroutinesDependencies
     private const val COROUTINES_CORE =

@@ -13,9 +13,12 @@ repositories {
     gradlePluginPortal()
 }
 
-tasks.withType<Test> {
-    useJUnitPlatform()
-}
+//tasks.withType<Test> {
+//    useJUnitPlatform()
+//    testLogging {
+//        events("passed", "skipped", "failed")
+//    }
+//}
 
 object PluginsVersions {
     const val GRADLE = "4.2.2"

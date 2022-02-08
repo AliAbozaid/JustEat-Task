@@ -1,5 +1,4 @@
 import dependencies.DebugDependencies
-import dependencies.FirebaseDependencies
 import dependencies.NavigationDependencies
 import extensions.addTestsDependencies
 import extensions.implementation
@@ -63,6 +62,8 @@ android {
 
 dependencies {
 
+    api(AppDependencies.APPCOMPAT)
+    api(AppDependencies.MATERIAL)
     implementation(NavigationDependencies.NAVIGATION_LIBRARIES)
     implementation(AppDependencies.CONSTRAINT_LAYOUT)
     debugImplementation(DebugDependencies.LEAKCANARY)
