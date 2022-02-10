@@ -12,8 +12,8 @@ import kotlinx.coroutines.test.runBlockingTest
 import org.junit.Before
 import org.junit.Test
 
-class SearchRestaurantUseCaseTest {
-	private lateinit var searchRestaurantUseCase: SearchRestaurantUseCase
+class RestaurantUseCaseTest {
+	private lateinit var restaurantUseCase: RestaurantUseCase
 	private val restaurantRepository: RestaurantRepository =
 		mockk(relaxed = true)
 
@@ -40,14 +40,14 @@ class SearchRestaurantUseCaseTest {
 		coEvery { restaurantRepository.getRestaurants() }.returns(
 			Resource.Success(restaurants)
 		)
-		searchRestaurantUseCase = SearchRestaurantUseCase(restaurantRepository)
+		restaurantUseCase = RestaurantUseCase(restaurantRepository)
 	}
 
 
 	@Test
 	fun `given getRestaurants when called from useCase then getRestaurants get called from repo`() =
 		runBlockingTest {
-			searchRestaurantUseCase.getRestaurants()
+			restaurantUseCase.getRestaurants()
 			coVerify {
 				restaurantRepository.getRestaurants()
 			}

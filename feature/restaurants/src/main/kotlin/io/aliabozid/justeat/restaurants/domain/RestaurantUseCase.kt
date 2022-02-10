@@ -4,7 +4,7 @@ import io.aliabozid.justeat.restaurants.data.Resource
 import io.aliabozid.justeat.restaurants.data.model.Restaurant
 import io.aliabozid.justeat.restaurants.data.repository.RestaurantRepository
 
-class SearchRestaurantUseCase constructor(
+class RestaurantUseCase constructor(
 	private val restaurantRepository: RestaurantRepository
 ) {
 
