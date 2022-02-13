@@ -15,14 +15,6 @@
 		<ignore regexp=".*AppErrorExtension\.kt" />
 	</issue>
 
-	<!--
-	Crowdin exports also "many" form for Czech & Slovak when it is not used.
-	-->
-	<issue id="UnusedQuantity" severity="ignore" />
-	<issue id="DuplicateStrings" severity="ignore" />
-
-	<issue id="SetJavaScriptEnabled" severity="ignore" />
-
 	<issue id="VectorPath" severity="ignore" />
 	<issue id="ConvertToWebp" severity="ignore" />
 	<issue id="VectorRaster" severity="ignore" />
