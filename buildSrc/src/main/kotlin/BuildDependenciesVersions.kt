@@ -11,7 +11,7 @@ object BuildDependenciesVersions {
     const val TIMBER = "4.7.1"
     const val LIFECYCLE = "2.4.0-alpha02"
     const val LIFECYCLE_EXTENSION = "2.2.0"
-    const val COROUTINES = "1.5.0"
+    const val COROUTINES = "1.5.2"
     const val COIL = "1.1.1"
     const val APPCOMPAT = "1.3.0"
     const val MATERIAL = "1.5.0-alpha04"

@@ -74,6 +74,7 @@ dependencies {
 
 	api(AppDependencies.MOSHI)
 	kapt(AppDependencies.MOSHI_CODEGEN)
+	implementation(AppDependencies.COROUTINES_LIBRARIES)
 	implementation(NavigationDependencies.NAVIGATION_LIBRARIES)
 	implementation(AppDependencies.CONSTRAINT_LAYOUT)
 	debugImplementation(DebugDependencies.LEAKCANARY)
