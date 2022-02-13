@@ -59,25 +59,10 @@ class RestaurantAdapter constructor(var selectedSort: SelectedSort) :
         fun bind(restaurant: Restaurant) {
             binding.restaurantName.text = restaurant.name
             binding.status.text = restaurant.status?.name
-            binding.distance.text =
-                getDistance(restaurant.sortingValues?.distance)
-            binding.cost.text = getCost(restaurant.sortingValues?.minCost)
+            binding.distance.text = restaurant.sortingValues?.getDistance()
+            binding.cost.text = restaurant.sortingValues?.getCost()
             binding.rating.text =
                 restaurant.sortingValues?.ratingAverage.toString()
         }
-
-        private fun getDistance(distance: Double?): String =
-            if (distance ?: 0.0 >= KM_VALUE) {
-                String.format("%.1f km", distance?.div(KM_VALUE))
-            } else {
-                String.format("%f m", distance)
-            }
-
-        private fun getCost(cost: Double?) =
-            String.format("%s ₹", cost?.toInt().toString())
-    }
-
-    companion object {
-        private const val KM_VALUE: Double = 1000.0
     }
 }
