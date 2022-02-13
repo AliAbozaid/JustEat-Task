@@ -23,10 +23,10 @@ android {
 		testInstrumentationRunner = AppConfig.androidTestInstrumentation
 	}
 
-	lintOptions {
-		lintConfig = file(".lint/config.xml")
-		isCheckAllWarnings = true
-		isWarningsAsErrors = true
+	lint {
+		lintConfig = file("../../.lint/config.xml")
+		checkAllWarnings = true
+		warningsAsErrors = false
 	}
 
 	buildTypes {
@@ -69,8 +69,8 @@ android {
 }
 
 dependencies {
-	implementation(project(":feature:navigation"))
-	implementation(project(":feature:common"))
+	implementation(project(":navigation"))
+	implementation(project(":common"))
 	implementation(project(":feature:sort"))
 
 	api(AppDependencies.MOSHI)

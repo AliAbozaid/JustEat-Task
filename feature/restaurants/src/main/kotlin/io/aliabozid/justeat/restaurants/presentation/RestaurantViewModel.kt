@@ -14,56 +14,56 @@ import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.launch
 
 class RestaurantViewModel constructor(
-	private val restaurantUseCase: RestaurantUseCase,
-	private val restaurantChainUseCase: RestaurantChainUseCase,
-	private val dispatcher: Dispatcher
+    private val restaurantUseCase: RestaurantUseCase,
+    private val restaurantChainUseCase: RestaurantChainUseCase,
+    private val dispatcher: Dispatcher
 ) : ViewModel() {
 
-	private val _restaurantStateFlow =
-		MutableSharedFlow<ResourceUi<List<Restaurant>>>()
-	val restaurantStateFlow = _restaurantStateFlow.asSharedFlow()
+    private val _restaurantStateFlow =
+        MutableSharedFlow<ResourceUi<List<Restaurant>>>()
+    val restaurantStateFlow = _restaurantStateFlow.asSharedFlow()
 
-	fun getSelectedSort() = restaurantChainUseCase.getSelectedSort()
+    fun getSelectedSort() = restaurantChainUseCase.getSelectedSort()
 
-	fun setSelectedSort(selectedSort: SelectedSort) {
-		restaurantChainUseCase.setSelectedSort(selectedSort)
-		submitSuccessData()
-	}
+    fun setSelectedSort(selectedSort: SelectedSort) {
+        restaurantChainUseCase.setSelectedSort(selectedSort)
+        submitSuccessData()
+    }
 
-	fun getRestaurants() {
-		viewModelScope.launch(dispatcher.io()) {
-			_restaurantStateFlow.emit(ResourceUi.loading())
-			when (val restaurantResource = restaurantUseCase.getRestaurants()) {
-				is Resource.Success -> {
-					restaurantChainUseCase.restaurants =
-						restaurantResource.data.toMutableList()
-					submitSuccessData()
-				}
-				is Resource.Error -> {
-					_restaurantStateFlow.emit(
-						ResourceUi.error(
-							Exception(
-								restaurantResource.message
-							)
-						)
-					)
-				}
-			}
-		}
-	}
+    fun getRestaurants() {
+        viewModelScope.launch(dispatcher.io()) {
+            _restaurantStateFlow.emit(ResourceUi.loading())
+            when (val restaurantResource = restaurantUseCase.getRestaurants()) {
+                is Resource.Success -> {
+                    restaurantChainUseCase.restaurants =
+                        restaurantResource.data.toMutableList()
+                    submitSuccessData()
+                }
+                is Resource.Error -> {
+                    _restaurantStateFlow.emit(
+                        ResourceUi.error(
+                            Exception(
+                                restaurantResource.message
+                            )
+                        )
+                    )
+                }
+            }
+        }
+    }
 
-	fun searchRestaurant(restaurantName: String) {
-		restaurantChainUseCase.restaurantName = restaurantName
-		submitSuccessData()
-	}
+    fun searchRestaurant(restaurantName: String) {
+        restaurantChainUseCase.restaurantName = restaurantName
+        submitSuccessData()
+    }
 
-	private fun submitSuccessData() {
-		viewModelScope.launch(dispatcher.io()) {
-			_restaurantStateFlow.emit(
-				ResourceUi.success(
-					restaurantChainUseCase.execute()
-				)
-			)
-		}
-	}
+    private fun submitSuccessData() {
+        viewModelScope.launch(dispatcher.io()) {
+            _restaurantStateFlow.emit(
+                ResourceUi.success(
+                    restaurantChainUseCase.execute()
+                )
+            )
+        }
+    }
 }

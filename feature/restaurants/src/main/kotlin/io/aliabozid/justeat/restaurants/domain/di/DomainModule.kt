@@ -7,24 +7,24 @@ import io.aliabozid.justeat.restaurants.domain.SortUseCase
 import org.koin.dsl.module
 
 val domainModule = module {
-	single {
-		RestaurantUseCase(
-			restaurantRepository = get()
-		)
-	}
-	single {
-		RestaurantChainUseCase(
-			preferenceHelper = get(),
-			sortUseCase = get(),
-			filterUseCase = get(),
-			dispatcher = get()
-		)
-	}
+    single {
+        RestaurantUseCase(
+            restaurantRepository = get()
+        )
+    }
+    single {
+        RestaurantChainUseCase(
+            preferenceHelper = get(),
+            sortUseCase = get(),
+            filterUseCase = get(),
+            dispatcher = get()
+        )
+    }
 
-	single {
-		SortUseCase()
-	}
-	single {
-		FilterUseCase(dispatcher = get())
-	}
+    single {
+        SortUseCase()
+    }
+    single {
+        FilterUseCase(dispatcher = get())
+    }
 }

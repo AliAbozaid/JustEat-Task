@@ -15,7 +15,6 @@ object BuildDependenciesVersions {
     const val APPCOMPAT = "1.3.0"
     const val MATERIAL = "1.5.0-alpha04"
     const val MOSHI = "1.13.0"
-    const val DATA_STORE = "1.0.0-beta01"
 
     const val JUNIT = "4.13.2"
     const val ANDROIDX_JUNIT = "1.1.3"

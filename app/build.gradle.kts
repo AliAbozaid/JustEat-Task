@@ -85,10 +85,10 @@ android {
 		}
 	}
 
-	lintOptions {
-		lintConfig = file(".lint/config.xml")
-		isCheckAllWarnings = true
-		isWarningsAsErrors = true
+	lint {
+		lintConfig = file("../.lint/config.xml")
+		checkAllWarnings = true
+		warningsAsErrors = false
 	}
 
 	testOptions {
@@ -99,8 +99,8 @@ android {
 }
 
 dependencies {
-	implementation(project(":feature:navigation"))
-	implementation(project(":feature:common"))
+	implementation(project(":navigation"))
+	implementation(project(":common"))
 	implementation(project(":feature:restaurants"))
 	implementation(AppDependencies.KOTLIN)
 

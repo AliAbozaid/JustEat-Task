@@ -1,4 +1,6 @@
+import dependencies.DebugDependencies
 import dependencies.NavigationDependencies
+import dependencies.LifecycleDependencies
 import extensions.addTestsDependencies
 import extensions.implementation
 
@@ -6,6 +8,7 @@ plugins {
     id("com.android.library")
     kotlin("android")
 }
+
 android {
     compileSdk = AppConfig.compileSdk
 
@@ -13,6 +16,12 @@ android {
         minSdk = AppConfig.minSdkVersion
         targetSdk = AppConfig.targetSdkVersion
         testInstrumentationRunner = AppConfig.androidTestInstrumentation
+    }
+
+    lint {
+        lintConfig = file("../.lint/config.xml")
+        checkAllWarnings = true
+        warningsAsErrors = false
     }
 
     buildTypes {
@@ -45,11 +54,18 @@ android {
             java.srcDir("src/androidTest/kotlin")
         }
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
 
+    api(AppDependencies.APPCOMPAT)
+    api(AppDependencies.MATERIAL)
+    implementation(LifecycleDependencies.LIFE_CYCLE_LIBRARIES)
     implementation(NavigationDependencies.NAVIGATION_LIBRARIES)
     implementation(AppDependencies.CONSTRAINT_LAYOUT)
+    debugImplementation(DebugDependencies.LEAKCANARY)
     addTestsDependencies()
 }

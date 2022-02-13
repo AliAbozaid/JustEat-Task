@@ -1,7 +1,7 @@
 include(
     ":app",
-    ":feature:common",
-    ":feature:navigation",
+    ":common",
+    ":navigation",
     ":feature:restaurants",
     ":feature:sort"
 )

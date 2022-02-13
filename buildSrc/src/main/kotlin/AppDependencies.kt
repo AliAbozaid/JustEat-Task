@@ -7,8 +7,6 @@ object AppDependencies {
 		"com.google.android.material:material:${BuildDependenciesVersions.MATERIAL}"
 	const val KOTLIN =
 		"org.jetbrains.kotlin:kotlin-stdlib-jdk7:${BuildDependenciesVersions.KOTLIN}"
-	const val DATA_STORE =
-		"androidx.datastore:datastore-preferences:${BuildDependenciesVersions.DATA_STORE}"
 
 	const val MOSHI =
 		"com.squareup.moshi:moshi-kotlin:${BuildDependenciesVersions.MOSHI}"
