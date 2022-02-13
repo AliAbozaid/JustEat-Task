@@ -10,12 +10,10 @@ class FileReaderImpl constructor(private val context: Context) : FileReader {
             return context.assets.open(fileName).bufferedReader()
                 .use { it.readText() }
         } catch (exc: Exception) {
-            throw (
-                FileNotFoundException(
-                    "No file named for the name " +
-                        "$fileName make sure the file is in the assets folder"
-                )
-                )
+            throw FileNotFoundException(
+                "No file named for the name " +
+                    "$fileName make sure the file is in the assets folder"
+            )
         }
     }
 }

@@ -1,9 +1,8 @@
 object BuildDependenciesVersions {
     // app level
     const val GRADLE = "7.0.3"
-    const val GOOGLE_SERVICES = "4.3.8"
     const val NAVIGATION_PLUGIN = "2.3.5"
-    const val KTLINT = "0.41.0"
+    const val KTLINT = "0.43.2"
     const val KOTLIN = "1.5.30"
     const val NAVIGATION = "2.3.5"
     const val CONSTRAINT_LAYOUT = "2.0.4"
@@ -15,7 +14,7 @@ object BuildDependenciesVersions {
     const val COIL = "1.1.1"
     const val APPCOMPAT = "1.3.0"
     const val MATERIAL = "1.5.0-alpha04"
-    const val MOSHI = "1.12.0"
+    const val MOSHI = "1.13.0"
 
     const val JUNIT = "4.13.2"
     const val ANDROIDX_JUNIT = "1.1.3"
@@ -25,5 +24,5 @@ object BuildDependenciesVersions {
     const val COROUTINES_TEST = "1.3.9"
     const val JUPITER = "5.7.0"
 
-    const val LEAKCANARY = "2.5"
+    const val LEAKCANARY = "2.8.1"
 }

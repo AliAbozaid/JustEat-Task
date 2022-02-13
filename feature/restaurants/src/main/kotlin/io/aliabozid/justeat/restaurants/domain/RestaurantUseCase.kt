@@ -5,9 +5,9 @@ import io.aliabozid.justeat.restaurants.data.model.Restaurant
 import io.aliabozid.justeat.restaurants.data.repository.RestaurantRepository
 
 class RestaurantUseCase constructor(
-	private val restaurantRepository: RestaurantRepository
+    private val restaurantRepository: RestaurantRepository
 ) {
 
-	suspend fun getRestaurants(): Resource<List<Restaurant>> =
-		restaurantRepository.getRestaurants()
+    suspend fun getRestaurants(): Resource<List<Restaurant>> =
+        restaurantRepository.getRestaurants()
 }

@@ -1,7 +1,8 @@
 include(
     ":app",
-    ":feature:common",
-    ":feature:navigation",
-    ":feature:restaurants"
+    ":common",
+    ":navigation",
+    ":feature:restaurants",
+    ":feature:sort"
 )
 rootProject.buildFileName = "build.gradle.kts"

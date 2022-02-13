@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<item name="restaurants_navigation" type="id"/>
+	<item name="sort_list_navigation" type="id"/>
+</resources>

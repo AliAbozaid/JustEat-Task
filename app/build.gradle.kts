@@ -65,14 +65,12 @@ android {
 		}
 	}
 
-	flavorDimensions(AppConfig.dimension)
-
 	compileOptions {
-		sourceCompatibility = JavaVersion.VERSION_1_8
-		targetCompatibility = JavaVersion.VERSION_1_8
+		sourceCompatibility = JavaVersion.VERSION_11
+		targetCompatibility = JavaVersion.VERSION_11
 	}
 	kotlinOptions {
-		jvmTarget = JavaVersion.VERSION_1_8.toString()
+		jvmTarget = JavaVersion.VERSION_11.toString()
 	}
 
 	sourceSets {
@@ -87,10 +85,10 @@ android {
 		}
 	}
 
-	lintOptions {
-		lintConfig = file(".lint/config.xml")
-		isCheckAllWarnings = true
-		isWarningsAsErrors = true
+	lint {
+		lintConfig = file("../.lint/config.xml")
+		checkAllWarnings = true
+		warningsAsErrors = false
 	}
 
 	testOptions {
@@ -101,8 +99,8 @@ android {
 }
 
 dependencies {
-	implementation(project(":feature:navigation"))
-	implementation(project(":feature:common"))
+	implementation(project(":navigation"))
+	implementation(project(":common"))
 	implementation(project(":feature:restaurants"))
 	implementation(AppDependencies.KOTLIN)
 

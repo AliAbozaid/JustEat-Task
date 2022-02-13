@@ -1,7 +1,0 @@
-<resources>
-	<string name="app_name">JustEat</string>
-	<string name="default_error">Something went wrong, please try again later</string>
-	<string name="no_file">The app is missing the data, please update it</string>
-	<string name="parsing_error">The data is corrupt, please update the data</string>
-	<string name="no_restaurants_found">No restaurants found</string>
-</resources>

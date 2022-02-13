@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="background">@color/black</color>
+	<color name="app_toolbar_text">@color/white</color>
+	<color name="fab_bg">@color/white</color>
+	<color name="fab_icon_bg">@color/black</color>
+
+	<color name="textColorTextInputDisabled">@color/white</color>
+	<color name="textColorTextInputEnabled">@color/white</color>
+	<color name="strokeColorTextInputOutlinedActive">@color/white</color>
+</resources>

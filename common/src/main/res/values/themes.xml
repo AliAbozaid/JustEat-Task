@@ -1,0 +1,87 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+	<!-- Base application theme. -->
+	<style name="Theme.JustEat" parent="Theme.MaterialComponents.Light.NoActionBar">
+		<!-- Primary brand color. -->
+		<item name="colorPrimary">@color/background</item>
+		<item name="colorPrimaryVariant">@android:color/transparent</item>
+		<item name="colorOnPrimary">@color/background</item>
+		<!-- Status bar color. -->
+		<item name="android:statusBarColor" tools:targetApi="l">
+			?attr/colorPrimaryVariant
+		</item>
+		<item name="android:windowLightStatusBar" tools:targetApi="m">true
+		</item>
+		<item name="colorPrimaryDark">@color/background</item>
+		<item name="colorAccent">@color/background</item>
+		<item name="android:windowBackground">@null</item>
+
+	</style>
+
+	<style name="SplashTheme" parent="Theme.JustEat">
+		<item name="android:windowBackground">@drawable/ic_launcher_background
+		</item>
+		<item name="android:windowAnimationStyle">@null</item>
+	</style>
+
+	<style name="HorizontalSeparatorView">
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">@dimen/separator_dimen</item>
+		<item name="android:background">@color/ghost</item>
+	</style>
+
+	<style name="Theme.JustEat.ToolbarStyle" parent="Theme.JustEat">
+		<item name="android:popupTheme">
+			@style/ThemeOverlay.AppCompat.Dark.ActionBar
+		</item>
+		<item name="android:background">@color/background</item>
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">?actionBarSize</item>
+		<item name="android:elevation">4dp</item>
+		<item name="titleTextAppearance">@style/TextAppearance.JustEat.Toolbar
+		</item>
+		<item name="android:actionMenuTextColor">@drawable/state_menu_filter
+		</item>
+		<item name="android:textAllCaps">true</item>
+		<item name="titleTextColor">@color/app_toolbar_text</item>
+	</style>
+
+	<style name="CursorTheme" parent="ThemeOverlay.MaterialComponents.TextInputEditText.OutlinedBox">
+		<item name="colorControlActivated">@color/app_toolbar_text</item>
+	</style>
+
+	<style name="Theme.JustEat.OutlinedTextInput" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="boxStrokeColor">@color/stroke_color_input_states</item>
+		<item name="errorTextColor">@color/colorError</item>
+		<item name="errorIconDrawable">@null</item>
+		<item name="android:textSize">17sp</item>
+		<item name="endIconMode">@null</item>
+		<item name="fontFamily">sans-serif</item>
+		<item name="boxStrokeErrorColor">@color/colorError</item>
+		<item name="hintTextAppearance">
+			@style/TextAppearance.JustEat.TextInput.Hint
+		</item>
+		<item name="hintTextColor">@color/hint_text_color_input_states</item>
+		<item name="android:theme">@style/CursorTheme</item>
+		<item name="boxCornerRadiusBottomEnd">20dp</item>
+		<item name="boxCornerRadiusTopEnd">20dp</item>
+		<item name="boxCornerRadiusBottomStart">20dp</item>
+		<item name="boxCornerRadiusTopStart">20dp</item>
+		<item name="android:drawableTint">@color/ghost</item>
+	</style>
+
+	<style name="Widget.JustEat.OutlinedTextInput.EditText" parent="Widget.MaterialComponents.TextInputEditText.OutlinedBox">
+		<item name="android:textColor">@color/text_color_input_states</item>
+		<item name="android:textAppearance">
+			@style/TextAppearance.JustEat.TextInput.Text
+		</item>
+		<item name="android:textColorHint">@color/ghost</item>
+	</style>
+
+	<style name="Theme.JustEat.OutlinedTextInput.Search" parent="Theme.JustEat.OutlinedTextInput">
+		<item name="startIconDrawable">@drawable/ic_search</item>
+		<item name="endIconMode">clear_text</item>
+		<item name="endIconDrawable">@drawable/ic_close</item>
+	</style>
+</resources>
