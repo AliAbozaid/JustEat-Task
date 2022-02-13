@@ -16,9 +16,7 @@ android {
     }
 
     buildTypes {
-        getByName(BuildType.DEBUG) {
-            isDebuggable = true
-        }
+        getByName(BuildType.DEBUG) {}
         getByName(BuildType.RELEASE) {
             isMinifyEnabled = true
             proguardFiles(
@@ -27,14 +25,13 @@ android {
         }
     }
 
-    flavorDimensions(AppConfig.dimension)
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8.toString()
+        jvmTarget = JavaVersion.VERSION_11.toString()
     }
 
     sourceSets {

@@ -1,5 +1,6 @@
 import dependencies.DebugDependencies
 import dependencies.NavigationDependencies
+import dependencies.LifecycleDependencies
 import extensions.addTestsDependencies
 import extensions.implementation
 
@@ -24,9 +25,7 @@ android {
     }
 
     buildTypes {
-        getByName(BuildType.DEBUG) {
-            isDebuggable = true
-        }
+        getByName(BuildType.DEBUG) {}
         getByName(BuildType.RELEASE) {
             isMinifyEnabled = true
             proguardFiles(
@@ -36,12 +35,12 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8.toString()
+        jvmTarget = JavaVersion.VERSION_11.toString()
     }
 
     sourceSets {
@@ -64,6 +63,8 @@ dependencies {
 
     api(AppDependencies.APPCOMPAT)
     api(AppDependencies.MATERIAL)
+    // TODO api(AppDependencies.DATA_STORE)
+    implementation(LifecycleDependencies.LIFE_CYCLE_LIBRARIES)
     implementation(NavigationDependencies.NAVIGATION_LIBRARIES)
     implementation(AppDependencies.CONSTRAINT_LAYOUT)
     debugImplementation(DebugDependencies.LEAKCANARY)

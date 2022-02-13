@@ -33,7 +33,6 @@ class RestaurantUseCaseTest {
 	)
 	private val restaurants = mutableListOf<Restaurant>()
 
-
 	@Before
 	fun setUp() {
 		restaurants.add(restaurant)
@@ -42,7 +41,6 @@ class RestaurantUseCaseTest {
 		)
 		restaurantUseCase = RestaurantUseCase(restaurantRepository)
 	}
-
 
 	@Test
 	fun `given getRestaurants when called from useCase then getRestaurants get called from repo`() =

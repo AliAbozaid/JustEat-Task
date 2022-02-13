@@ -18,6 +18,10 @@ tasks {
         main = "com.pinterest.ktlint.Main"
         args("--android", "src/**/*.kt")
     }
+	ktlint.exclude(group = "test/src/**/*.kt")
+    ktlint.exclude(group ="*/test/.*")
+    ktlint.exclude(group ="*Test.kt")
+
 
     register<JavaExec>("ktlintFormat") {
         group = BuildTasksGroups.FORMATTING

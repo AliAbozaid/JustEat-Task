@@ -1,5 +1,6 @@
 package extensions
 
+import com.android.build.api.dsl.VariantDimension
 import com.android.build.gradle.internal.dsl.BuildType
 
 /**
@@ -9,6 +10,9 @@ import com.android.build.gradle.internal.dsl.BuildType
  * @param value the string value of the field
  */
 fun BuildType.buildConfigStringField(name: String, value: String) {
+    this.buildConfigField("String", name, "\"$value\"")
+
+}fun VariantDimension.buildConfigStringField(name: String, value: String) {
     this.buildConfigField("String", name, "\"$value\"")
 }
 

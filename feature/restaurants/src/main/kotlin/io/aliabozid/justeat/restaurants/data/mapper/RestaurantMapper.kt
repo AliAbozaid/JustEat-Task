@@ -8,7 +8,7 @@ import io.aliabozid.justeat.restaurants.data.model.SortOption
 fun RestaurantEntity.mapToRestaurant() =
     Restaurant(
         name = name,
-        status = status?.let { RestaurantStatus.valueOf(it.uppercase()) },
+        status = status?.let { RestaurantStatus.getStatus(it) },
         sortingValues = SortOption(
             bestMatch = sortingValues?.bestMatch,
             newest = sortingValues?.newest,

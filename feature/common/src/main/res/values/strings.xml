@@ -1,7 +1,18 @@
 <resources>
-	<string name="app_name">JustEat</string>
+	<string name="app_name">Just Eat</string>
 	<string name="default_error">Something went wrong, please try again later</string>
 	<string name="no_file">The app is missing the data, please update it</string>
 	<string name="parsing_error">The data is corrupt, please update the data</string>
 	<string name="no_restaurants_found">No restaurants found</string>
+	<string name="status_title">Status:</string>
+	<string name="best_match">Best Match</string>
+	<string name="newest">Newest</string>
+	<string name="rating_average">Rating average</string>
+	<string name="distance">Distance</string>
+	<string name="popularity">Popularity</string>
+	<string name="average_price">Average Price</string>
+	<string name="delivery_cost">Delivery Cost</string>
+	<string name="min_cost">Min cost</string>
+	<string name="sort_by">Sort by</string>
+	<string name="search_text_hint">Search restaurants by name</string>
 </resources>

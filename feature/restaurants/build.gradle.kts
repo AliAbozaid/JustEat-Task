@@ -1,5 +1,6 @@
 import dependencies.DebugDependencies
 import dependencies.NavigationDependencies
+import dependencies.KoinDependencies
 import extensions.addTestsDependencies
 import extensions.api
 import extensions.buildConfigStringField
@@ -30,7 +31,6 @@ android {
 
 	buildTypes {
 		getByName(BuildType.DEBUG) {
-			isDebuggable = true
 			buildConfigStringField("RESTAURANTS_FILE", "restaurants.json")
 		}
 		getByName(BuildType.RELEASE) {
@@ -44,12 +44,12 @@ android {
 	}
 
 	compileOptions {
-		sourceCompatibility = JavaVersion.VERSION_1_8
-		targetCompatibility = JavaVersion.VERSION_1_8
+		sourceCompatibility = JavaVersion.VERSION_11
+		targetCompatibility = JavaVersion.VERSION_11
 	}
 
 	kotlinOptions {
-		jvmTarget = JavaVersion.VERSION_1_8.toString()
+		jvmTarget = JavaVersion.VERSION_11.toString()
 	}
 
 	sourceSets {
@@ -71,9 +71,11 @@ android {
 dependencies {
 	implementation(project(":feature:navigation"))
 	implementation(project(":feature:common"))
+	implementation(project(":feature:sort"))
 
 	api(AppDependencies.MOSHI)
 	kapt(AppDependencies.MOSHI_CODEGEN)
+	implementation(KoinDependencies.KOIN_LIBRARIES)
 	implementation(AppDependencies.COROUTINES_LIBRARIES)
 	implementation(NavigationDependencies.NAVIGATION_LIBRARIES)
 	implementation(AppDependencies.CONSTRAINT_LAYOUT)

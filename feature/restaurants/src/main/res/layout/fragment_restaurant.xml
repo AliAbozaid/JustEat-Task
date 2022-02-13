@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+
+	<com.google.android.material.appbar.AppBarLayout
+		android:id="@+id/appbar"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:backgroundTint="@color/background"
+		android:fitsSystemWindows="true"
+		android:paddingBottom="4dp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent">
+
+		<com.google.android.material.appbar.MaterialToolbar
+			android:id="@+id/toolbar"
+			style="@style/Theme.JustEat.ToolbarStyle"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content" />
+
+		<com.google.android.material.textfield.TextInputLayout
+			android:id="@+id/search"
+			style="@style/Theme.JustEat.OutlinedTextInput.Search"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginHorizontal="16dp"
+			android:layout_marginTop="8dp"
+			android:drawablePadding="12dp"
+			app:endIconMode="clear_text"
+			app:endIconTint="@null"
+			app:startIconDrawable="@drawable/ic_search"
+			app:startIconTint="@color/ghost">
+
+			<com.google.android.material.textfield.TextInputEditText
+				android:id="@+id/searchTextInputEditText"
+				style="@style/Widget.JustEat.OutlinedTextInput.EditText"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:imeOptions="actionDone"
+				android:inputType="textCapWords"
+				android:textSize="16sp" />
+		</com.google.android.material.textfield.TextInputLayout>
+	</com.google.android.material.appbar.AppBarLayout>
+
+	<TextView
+		android:id="@+id/sortType"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginHorizontal="16dp"
+		android:layout_marginTop="16dp"
+		android:textAlignment="viewStart"
+		android:textAppearance="@style/TextAppearance.JustEat.Restaurant.Sort.Title"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/appbar"
+		tools:text="Rating" />
+
+	<androidx.recyclerview.widget.RecyclerView
+		android:id="@+id/restaurantRecyclerView"
+		android:layout_width="0dp"
+		android:layout_height="0dp"
+		android:layout_margin="16dp"
+		android:clipToPadding="false"
+		android:paddingVertical="16dp"
+		app:layout_behavior="@string/appbar_scrolling_view_behavior"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/sortType"
+		tools:listitem="@layout/row_restaurant" />
+
+	<com.google.android.material.floatingactionbutton.FloatingActionButton
+		android:id="@+id/sort"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="end"
+		android:layout_marginEnd="16dp"
+		android:layout_marginBottom="16dp"
+		app:backgroundTint="@color/fab_bg"
+		app:layout_behavior="@string/appbar_scrolling_view_behavior"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:srcCompat="@drawable/ic_sort_by"
+		app:tint="@color/fab_icon_bg"
+		tools:ignore="ContentDescription" />
+</androidx.constraintlayout.widget.ConstraintLayout>
