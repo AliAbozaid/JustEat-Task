@@ -19,7 +19,5 @@ class MainActivity : AppCompatActivity() {
             navController = it.navController
         }
         window.setBackgroundDrawableResource(R.color.background)
-        // Going to Edge to Edge
-        WindowCompat.setDecorFitsSystemWindows(window, false)
     }
 }
