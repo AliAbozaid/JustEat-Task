@@ -1,8 +1,8 @@
 package io.aliabozid.justeat.restaurants.domain
 
 import io.aliabozid.justeat.restaurants.data.helper.PreferenceHelper
-import io.aliabozid.justeat.restaurants.data.model.Restaurant
-import io.aliabozid.justeat.restaurants.data.model.RestaurantStatus
+import io.aliabozid.justeat.restaurants.domain.model.Restaurant
+import io.aliabozid.justeat.restaurants.domain.model.RestaurantStatus
 import io.aliabozid.justeat.sort.SelectedSort
 
 class RestaurantChainUseCase constructor(

@@ -7,9 +7,9 @@ import io.aliabozid.justeat.restaurants.data.client.RestaurantsLocalClient
 import io.aliabozid.justeat.restaurants.data.filereader.FileReader
 import io.aliabozid.justeat.restaurants.data.filereader.FileReaderImpl
 import io.aliabozid.justeat.restaurants.data.helper.PreferenceHelper
-import io.aliabozid.justeat.restaurants.data.repository.RestaurantRepository
 import io.aliabozid.justeat.restaurants.data.repository.RestaurantRepositoryImpl
 import io.aliabozid.justeat.restaurants.data.repository.RestaurantsErrorManager
+import io.aliabozid.justeat.restaurants.domain.repo.RestaurantRepository
 import org.koin.android.ext.koin.androidApplication
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module

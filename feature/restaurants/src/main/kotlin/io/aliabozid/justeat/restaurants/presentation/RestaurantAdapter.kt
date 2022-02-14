@@ -5,8 +5,8 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import io.aliabozid.justeat.assets.utils.layoutInflater
-import io.aliabozid.justeat.restaurants.data.model.Restaurant
 import io.aliabozid.justeat.restaurants.databinding.RowRestaurantBinding
+import io.aliabozid.justeat.restaurants.domain.model.Restaurant
 import io.aliabozid.justeat.sort.SelectedSort
 
 class RestaurantAdapter constructor(var selectedSort: SelectedSort) :

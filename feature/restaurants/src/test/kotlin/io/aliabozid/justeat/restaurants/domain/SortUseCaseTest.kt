@@ -1,9 +1,8 @@
 package io.aliabozid.justeat.restaurants.domain
 
-import io.aliabozid.justeat.restaurants.data.model.Restaurant
-import io.aliabozid.justeat.restaurants.data.model.RestaurantStatus
-import io.aliabozid.justeat.restaurants.data.model.SortOption
-import io.aliabozid.justeat.sort.SelectedSort
+import io.aliabozid.justeat.restaurants.domain.model.Restaurant
+import io.aliabozid.justeat.restaurants.domain.model.RestaurantStatus
+import io.aliabozid.justeat.restaurants.domain.model.SortOption
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test

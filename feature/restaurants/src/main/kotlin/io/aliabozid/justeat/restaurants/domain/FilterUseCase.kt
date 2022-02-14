@@ -1,6 +1,6 @@
 package io.aliabozid.justeat.restaurants.domain
 
-import io.aliabozid.justeat.restaurants.data.model.Restaurant
+import io.aliabozid.justeat.restaurants.domain.model.Restaurant
 
 class FilterUseCase {
 

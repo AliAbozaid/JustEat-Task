@@ -1,10 +1,10 @@
 package io.aliabozid.justeat.restaurants.domain
 
 import io.aliabozid.justeat.restaurants.data.Resource
-import io.aliabozid.justeat.restaurants.data.model.Restaurant
-import io.aliabozid.justeat.restaurants.data.model.RestaurantStatus
-import io.aliabozid.justeat.restaurants.data.model.SortOption
-import io.aliabozid.justeat.restaurants.data.repository.RestaurantRepository
+import io.aliabozid.justeat.restaurants.domain.model.Restaurant
+import io.aliabozid.justeat.restaurants.domain.model.RestaurantStatus
+import io.aliabozid.justeat.restaurants.domain.model.SortOption
+import io.aliabozid.justeat.restaurants.domain.repo.RestaurantRepository
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockk
