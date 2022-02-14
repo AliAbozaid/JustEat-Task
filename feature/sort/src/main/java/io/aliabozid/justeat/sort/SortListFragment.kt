@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import io.aliabozid.justeat.assets.utils.addDividerDecorator
 import io.aliabozid.justeat.sort.databinding.FragmentSortListBinding
 
 class SortListFragment : BottomSheetDialogFragment() {
@@ -63,6 +64,7 @@ class SortListFragment : BottomSheetDialogFragment() {
         with(binding.recyclerView) {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = sortAdapter
+            addDividerDecorator()
         }
         sortAdapter.submitList(SelectedSort.values().toList())
     }
