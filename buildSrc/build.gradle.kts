@@ -13,13 +13,6 @@ repositories {
     gradlePluginPortal()
 }
 
-//tasks.withType<Test> {
-//    useJUnitPlatform()
-//    testLogging {
-//        events("passed", "skipped", "failed")
-//    }
-//}
-
 object PluginsVersions {
     const val GRADLE = "7.1.1"
     const val KOTLIN = "1.6.10"

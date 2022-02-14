@@ -1,13 +1,11 @@
 package io.aliabozid.justeat.restaurants.domain
 
-import io.aliabozid.justeat.restaurants.data.helper.PreferenceHelper
 import io.aliabozid.justeat.restaurants.domain.model.Restaurant
 import io.aliabozid.justeat.restaurants.domain.model.RestaurantStatus
 import io.aliabozid.justeat.restaurants.domain.model.SortOption
 import io.aliabozid.justeat.sort.SelectedSort
 import io.mockk.coEvery
 import io.mockk.coVerify
-import io.mockk.every
 import io.mockk.mockk
 import kotlinx.coroutines.test.runBlockingTest
 import org.junit.Before
@@ -15,7 +13,6 @@ import org.junit.Test
 
 class RestaurantChainUseCaseTest {
 
-    private val preferenceHelper: PreferenceHelper = mockk(relaxed = true)
     private val sortUseCase: SortUseCase = mockk(relaxed = true)
     private val filterUseCase: FilterUseCase = mockk(relaxed = true)
     private lateinit var restaurantChainUseCase: RestaurantChainUseCase
@@ -38,7 +35,7 @@ class RestaurantChainUseCaseTest {
     @Before
     fun setUp() {
         restaurantChainUseCase = RestaurantChainUseCase(
-            preferenceHelper, sortUseCase, filterUseCase
+            sortUseCase, filterUseCase
         )
         restaurantChainUseCase.restaurants.add(restaurant)
     }
@@ -51,8 +48,7 @@ class RestaurantChainUseCaseTest {
                 filterUseCase.filterRestaurant(any(), any())
             } returns restaurantChainUseCase.restaurants
 
-            restaurantChainUseCase.execute()
-            every { preferenceHelper.selectedSort } returns SelectedSort.BEST_MATCH
+            restaurantChainUseCase.execute(SelectedSort.BEST_MATCH)
             coVerify {
                 filterUseCase.filterRestaurant(any(), any())
             }
@@ -64,8 +60,7 @@ class RestaurantChainUseCaseTest {
     @Test
     fun `given execute() is called when filter is not filled then sort only should be called`() =
         runBlockingTest {
-            restaurantChainUseCase.execute()
-            every { preferenceHelper.selectedSort } returns SelectedSort.BEST_MATCH
+            restaurantChainUseCase.execute(SelectedSort.BEST_MATCH)
             coVerify {
                 sortUseCase.sortRestaurant(any(), any())
             }

@@ -1,31 +1,23 @@
 package io.aliabozid.justeat.restaurants.domain
 
-import io.aliabozid.justeat.restaurants.data.helper.PreferenceHelper
 import io.aliabozid.justeat.restaurants.domain.model.Restaurant
 import io.aliabozid.justeat.restaurants.domain.model.RestaurantStatus
 import io.aliabozid.justeat.sort.SelectedSort
 
 class RestaurantChainUseCase constructor(
-    private val preferenceHelper: PreferenceHelper,
     private val sortUseCase: SortUseCase,
-    private val filterUseCase: FilterUseCase,
+    private val filterUseCase: FilterUseCase
 ) {
     var restaurants = mutableListOf<Restaurant>()
     var restaurantName: String? = null
 
-    fun getSelectedSort() = preferenceHelper.selectedSort
-
-    fun setSelectedSort(selectedSort: SelectedSort) {
-        preferenceHelper.selectedSort = selectedSort
-    }
-
-    fun execute(): MutableList<Restaurant> {
+    fun execute(selectedSort: SelectedSort): MutableList<Restaurant> {
         val restaurantResult = if (restaurantName.isNullOrEmpty().not()) {
             filterUseCase.filterRestaurant(restaurants, restaurantName)
         } else {
             restaurants
         }
-        sortUseCase.sortRestaurant(getSelectedSort(), restaurantResult)
+        sortUseCase.sortRestaurant(selectedSort, restaurantResult)
         return separateStatus(restaurantResult)
     }
 
