@@ -6,18 +6,18 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
+import io.aliabozid.justeat.assets.utils.Constant
 import io.aliabozid.justeat.restaurants.domain.repo.SelectedSortRepository
 import io.aliabozid.justeat.sort.SelectedSort
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
-const val DataStore_NAME = "selected_sort"
-
-val Context.datastore: DataStore<Preferences> by preferencesDataStore(name = DataStore_NAME)
-
 class SelectedSortRepositoryImpl(
     private val context: Context
 ) : SelectedSortRepository {
+    private val Context.datastore: DataStore<Preferences> by preferencesDataStore(
+        name = Constant.DataStore.DATA_STORE_NAME
+    )
 
     override suspend fun saveSelectedSort(selectedSort: SelectedSort) {
         context.datastore.edit { preference ->
