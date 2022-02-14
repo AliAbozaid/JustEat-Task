@@ -1,8 +1,6 @@
 package io.aliabozid.justeat.restaurants.data.di
 
-import android.content.Context
 import com.squareup.moshi.Moshi
-import io.aliabozid.justeat.assets.utils.Constant
 import io.aliabozid.justeat.restaurants.data.client.RestaurantsLocalClient
 import io.aliabozid.justeat.restaurants.data.filereader.FileReader
 import io.aliabozid.justeat.restaurants.data.filereader.FileReaderImpl
@@ -12,7 +10,6 @@ import io.aliabozid.justeat.restaurants.data.repository.SelectedSortRepositoryIm
 import io.aliabozid.justeat.restaurants.domain.repo.RestaurantRepository
 import io.aliabozid.justeat.restaurants.domain.repo.SelectedSortRepository
 import org.koin.android.ext.koin.androidApplication
-import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 
 val dataModule = module {
@@ -50,13 +47,5 @@ val dataModule = module {
         SelectedSortRepositoryImpl(
             context = androidApplication()
         )
-    }
-
-    factory {
-        androidContext()
-            .getSharedPreferences(
-                Constant.Preference.SHARED_PREF_NAME,
-                Context.MODE_PRIVATE
-            )
     }
 }

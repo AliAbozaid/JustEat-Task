@@ -12,8 +12,8 @@ import io.aliabozid.justeat.restaurants.domain.RestaurantUseCase
 import io.aliabozid.justeat.restaurants.domain.SortSelectionUseCase
 import io.aliabozid.justeat.restaurants.domain.model.Restaurant
 import io.aliabozid.justeat.sort.SelectedSort
-import kotlinx.coroutines.flow.MutableSharedFlow
-import kotlinx.coroutines.flow.asSharedFlow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
@@ -25,8 +25,8 @@ class RestaurantViewModel constructor(
 ) : ViewModel() {
 
     private val _restaurantStateFlow =
-        MutableSharedFlow<ResourceUi<List<Restaurant>>>()
-    val restaurantStateFlow = _restaurantStateFlow.asSharedFlow()
+        MutableStateFlow<ResourceUi<List<Restaurant>>>(ResourceUi.loading())
+    val restaurantStateFlow = _restaurantStateFlow.asStateFlow()
 
     private val _selectedSortLiveData: MutableLiveData<SelectedSort> = MutableLiveData()
     val selectedSortLiveData: LiveData<SelectedSort> = _selectedSortLiveData
@@ -55,7 +55,6 @@ class RestaurantViewModel constructor(
 
     private fun getRestaurants() {
         viewModelScope.launch(dispatcher.io()) {
-            _restaurantStateFlow.emit(ResourceUi.loading())
             when (val restaurantResource = restaurantUseCase.getRestaurants()) {
                 is Resource.Success -> {
                     restaurantChainUseCase.restaurants =
@@ -63,13 +62,12 @@ class RestaurantViewModel constructor(
                     submitSuccessData()
                 }
                 is Resource.Error -> {
-                    _restaurantStateFlow.emit(
+                    _restaurantStateFlow.value =
                         ResourceUi.error(
                             Exception(
                                 restaurantResource.message
                             )
                         )
-                    )
                 }
             }
         }
@@ -82,10 +80,8 @@ class RestaurantViewModel constructor(
 
     private fun submitSuccessData() {
         viewModelScope.launch(dispatcher.io()) {
-            _restaurantStateFlow.emit(
-                ResourceUi.success(
-                    restaurantChainUseCase.execute(selectedSortItem)
-                )
+            _restaurantStateFlow.value = ResourceUi.success(
+                restaurantChainUseCase.execute(selectedSortItem)
             )
         }
     }
