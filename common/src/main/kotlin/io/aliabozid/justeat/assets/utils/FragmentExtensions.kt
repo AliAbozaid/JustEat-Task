@@ -1,12 +1,16 @@
 package io.aliabozid.justeat.assets.utils
 
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
 
-fun Fragment.launchWhenResumed(
-    block: suspend CoroutineScope.() -> Unit
-): Job {
-    return viewLifecycleOwner.lifecycleScope.launchWhenResumed(block)
+inline fun Fragment.launchAndRepeatOnStart(crossinline block: suspend CoroutineScope.() -> Unit) {
+    viewLifecycleOwner.lifecycleScope.launch {
+        viewLifecycleOwner.lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
+            block()
+        }
+    }
 }
