@@ -35,6 +35,7 @@ class RestaurantViewModel constructor(
 
     init {
         selectedSort()
+        getRestaurants()
     }
 
     private fun selectedSort() {
@@ -52,7 +53,7 @@ class RestaurantViewModel constructor(
         }
     }
 
-    fun getRestaurants() {
+    private fun getRestaurants() {
         viewModelScope.launch(dispatcher.io()) {
             _restaurantStateFlow.emit(ResourceUi.loading())
             when (val restaurantResource = restaurantUseCase.getRestaurants()) {
