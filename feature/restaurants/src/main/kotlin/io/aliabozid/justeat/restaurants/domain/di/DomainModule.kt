@@ -16,8 +16,7 @@ val domainModule = module {
         RestaurantChainUseCase(
             preferenceHelper = get(),
             sortUseCase = get(),
-            filterUseCase = get(),
-            dispatcher = get()
+            filterUseCase = get()
         )
     }
 
@@ -25,6 +24,6 @@ val domainModule = module {
         SortUseCase()
     }
     single {
-        FilterUseCase(dispatcher = get())
+        FilterUseCase()
     }
 }
