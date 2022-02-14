@@ -6,11 +6,12 @@ import io.aliabozid.justeat.assets.utils.viewBinding
 import io.aliabozid.justeat.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-	private val binding: ActivityMainBinding by viewBinding(ActivityMainBinding::inflate)
+    private val binding: ActivityMainBinding
+        by viewBinding(ActivityMainBinding::inflate)
 
-	override fun onCreate(savedInstanceState: Bundle?) {
-		super.onCreate(savedInstanceState)
-		setContentView(binding.root)
-		window.setBackgroundDrawableResource(R.color.background)
-	}
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(binding.root)
+        window.setBackgroundDrawableResource(R.color.background)
+    }
 }
