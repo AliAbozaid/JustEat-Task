@@ -1,8 +1,8 @@
 package io.aliabozid.justeat.restaurants.domain
 
 import io.aliabozid.justeat.restaurants.data.Resource
-import io.aliabozid.justeat.restaurants.data.model.Restaurant
-import io.aliabozid.justeat.restaurants.data.repository.RestaurantRepository
+import io.aliabozid.justeat.restaurants.domain.model.Restaurant
+import io.aliabozid.justeat.restaurants.domain.repo.RestaurantRepository
 
 class RestaurantUseCase constructor(
     private val restaurantRepository: RestaurantRepository

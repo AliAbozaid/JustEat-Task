@@ -4,7 +4,8 @@ import io.aliabozid.justeat.restaurants.data.Resource
 import io.aliabozid.justeat.restaurants.data.client.FileResponse
 import io.aliabozid.justeat.restaurants.data.client.RestaurantsLocalClient
 import io.aliabozid.justeat.restaurants.data.mapper.mapToRestaurant
-import io.aliabozid.justeat.restaurants.data.model.Restaurant
+import io.aliabozid.justeat.restaurants.domain.model.Restaurant
+import io.aliabozid.justeat.restaurants.domain.repo.RestaurantRepository
 
 class RestaurantRepositoryImpl constructor(
     private val restaurantsLocalClient: RestaurantsLocalClient,

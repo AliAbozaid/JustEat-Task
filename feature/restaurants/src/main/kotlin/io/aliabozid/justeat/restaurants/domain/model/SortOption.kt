@@ -1,4 +1,4 @@
-package io.aliabozid.justeat.restaurants.data.model
+package io.aliabozid.justeat.restaurants.domain.model
 
 import io.aliabozid.justeat.sort.SelectedSort
 

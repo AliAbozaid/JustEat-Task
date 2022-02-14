@@ -1,4 +1,4 @@
-package io.aliabozid.justeat.restaurants.data.model
+package io.aliabozid.justeat.restaurants.domain.model
 
 enum class RestaurantStatus constructor(private val key: String) {
     OPEN(RestaurantStatus.OPEN_KEY),

@@ -5,9 +5,9 @@ import androidx.lifecycle.viewModelScope
 import io.aliabozid.justeat.assets.utils.Dispatcher
 import io.aliabozid.justeat.assets.utils.ResourceUi
 import io.aliabozid.justeat.restaurants.data.Resource
-import io.aliabozid.justeat.restaurants.data.model.Restaurant
 import io.aliabozid.justeat.restaurants.domain.RestaurantChainUseCase
 import io.aliabozid.justeat.restaurants.domain.RestaurantUseCase
+import io.aliabozid.justeat.restaurants.domain.model.Restaurant
 import io.aliabozid.justeat.sort.SelectedSort
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow

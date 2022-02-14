@@ -1,17 +1,14 @@
 package io.aliabozid.justeat.restaurants.domain
 
-import io.aliabozid.justeat.restaurants.base.DispatcherImplTest
-import io.aliabozid.justeat.restaurants.data.model.Restaurant
-import io.aliabozid.justeat.restaurants.data.model.RestaurantStatus
-import io.aliabozid.justeat.restaurants.data.model.SortOption
-import kotlinx.coroutines.test.runBlockingTest
+import io.aliabozid.justeat.restaurants.domain.model.Restaurant
+import io.aliabozid.justeat.restaurants.domain.model.RestaurantStatus
+import io.aliabozid.justeat.restaurants.domain.model.SortOption
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
 
 class FilterUseCaseTest {
     private lateinit var filterUseCase: FilterUseCase
-    private val testDispatcher = DispatcherImplTest()
 
     private val restaurant1 = Restaurant(
         name = "AAA",
@@ -47,24 +44,22 @@ class FilterUseCaseTest {
     fun setUp() {
         restaurants.add(restaurant1)
         restaurants.add(restaurant2)
-        filterUseCase = FilterUseCase(testDispatcher)
+        filterUseCase = FilterUseCase()
     }
 
     @Test
-    fun `given filterRestaurant is called when filter is filled then data should be filtered`() =
-        runBlockingTest {
-            val restaurantsList = filterUseCase.filterRestaurant(restaurants, "a")
+    fun `given filterRestaurant is called when filter is filled then data should be filtered`() {
+        val restaurantsList = filterUseCase.filterRestaurant(restaurants, "a")
 
-            Assert.assertEquals(1, restaurantsList.size)
-            Assert.assertEquals("AAA", restaurantsList[0].name)
-        }
+        Assert.assertEquals(1, restaurantsList.size)
+        Assert.assertEquals("AAA", restaurantsList[0].name)
+    }
 
     @Test
-    fun `given filterRestaurant called when filter isn't filled then data should be filtered`() =
-        runBlockingTest {
-            val restaurantsList = filterUseCase.filterRestaurant(restaurants, null)
+    fun `given filterRestaurant called when filter isn't filled then data should be filtered`() {
+        val restaurantsList = filterUseCase.filterRestaurant(restaurants, null)
 
-            Assert.assertEquals(2, restaurantsList.size)
-            Assert.assertEquals("BB", restaurantsList[1].name)
-        }
+        Assert.assertEquals(2, restaurantsList.size)
+        Assert.assertEquals("BB", restaurantsList[1].name)
+    }
 }

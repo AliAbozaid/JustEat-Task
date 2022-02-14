@@ -2,11 +2,11 @@ package io.aliabozid.justeat.restaurants.presentation
 
 import io.aliabozid.justeat.restaurants.base.DispatcherImplTest
 import io.aliabozid.justeat.restaurants.data.Resource
-import io.aliabozid.justeat.restaurants.data.model.Restaurant
-import io.aliabozid.justeat.restaurants.data.model.RestaurantStatus
-import io.aliabozid.justeat.restaurants.data.model.SortOption
 import io.aliabozid.justeat.restaurants.domain.RestaurantChainUseCase
 import io.aliabozid.justeat.restaurants.domain.RestaurantUseCase
+import io.aliabozid.justeat.restaurants.domain.model.Restaurant
+import io.aliabozid.justeat.restaurants.domain.model.RestaurantStatus
+import io.aliabozid.justeat.restaurants.domain.model.SortOption
 import io.aliabozid.justeat.sort.SelectedSort
 import io.mockk.coEvery
 import io.mockk.coVerify

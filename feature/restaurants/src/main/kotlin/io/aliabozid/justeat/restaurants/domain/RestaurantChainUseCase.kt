@@ -1,17 +1,14 @@
 package io.aliabozid.justeat.restaurants.domain
 
-import io.aliabozid.justeat.assets.utils.Dispatcher
 import io.aliabozid.justeat.restaurants.data.helper.PreferenceHelper
-import io.aliabozid.justeat.restaurants.data.model.Restaurant
-import io.aliabozid.justeat.restaurants.data.model.RestaurantStatus
+import io.aliabozid.justeat.restaurants.domain.model.Restaurant
+import io.aliabozid.justeat.restaurants.domain.model.RestaurantStatus
 import io.aliabozid.justeat.sort.SelectedSort
-import kotlinx.coroutines.withContext
 
 class RestaurantChainUseCase constructor(
     private val preferenceHelper: PreferenceHelper,
     private val sortUseCase: SortUseCase,
     private val filterUseCase: FilterUseCase,
-    private val dispatcher: Dispatcher
 ) {
     var restaurants = mutableListOf<Restaurant>()
     var restaurantName: String? = null
@@ -22,16 +19,15 @@ class RestaurantChainUseCase constructor(
         preferenceHelper.selectedSort = selectedSort
     }
 
-    suspend fun execute(): MutableList<Restaurant> =
-        withContext(dispatcher.io()) {
-            val restaurantResult = if (restaurantName.isNullOrEmpty().not()) {
-                filterUseCase.filterRestaurant(restaurants, restaurantName)
-            } else {
-                restaurants
-            }
-            sortUseCase.sortRestaurant(getSelectedSort(), restaurantResult)
-            return@withContext separateStatus(restaurantResult)
+    fun execute(): MutableList<Restaurant> {
+        val restaurantResult = if (restaurantName.isNullOrEmpty().not()) {
+            filterUseCase.filterRestaurant(restaurants, restaurantName)
+        } else {
+            restaurants
         }
+        sortUseCase.sortRestaurant(getSelectedSort(), restaurantResult)
+        return separateStatus(restaurantResult)
+    }
 
     private fun separateStatus(restaurants: MutableList<Restaurant>): MutableList<Restaurant> {
         val result = mutableListOf<Restaurant>()

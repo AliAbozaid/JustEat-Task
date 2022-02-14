@@ -10,14 +10,13 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import io.aliabozid.justeat.assets.utils.ResourceUi
 import io.aliabozid.justeat.assets.utils.addDividerDecorator
-import io.aliabozid.justeat.assets.utils.launchWhenResumed
+import io.aliabozid.justeat.assets.utils.launchAndRepeatOnStart
 import io.aliabozid.justeat.assets.utils.showErrorSnackBar
 import io.aliabozid.justeat.assets.utils.viewBinding
 import io.aliabozid.justeat.restaurants.R
 import io.aliabozid.justeat.restaurants.databinding.FragmentRestaurantBinding
 import io.aliabozid.justeat.sort.SelectedSort
 import io.aliabozid.justeat.sort.SortListFragment
-import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.collect
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -25,7 +24,6 @@ class RestaurantFragment : Fragment(R.layout.fragment_restaurant) {
 
     private val binding by viewBinding(FragmentRestaurantBinding::bind)
     private val viewModel by viewModel<RestaurantViewModel>()
-    private var restaurantJob: Job? = null
     private val restaurantAdapter by lazy {
         RestaurantAdapter(
             viewModel.getSelectedSort()
@@ -39,11 +37,6 @@ class RestaurantFragment : Fragment(R.layout.fragment_restaurant) {
         bindObservers()
         setupSortOption()
         setupSearch()
-    }
-
-    override fun onDestroy() {
-        restaurantJob?.cancel()
-        super.onDestroy()
     }
 
     private fun setupAppbar() {
@@ -63,7 +56,7 @@ class RestaurantFragment : Fragment(R.layout.fragment_restaurant) {
 
     private fun bindObservers() {
         viewModel.getRestaurants()
-        restaurantJob = launchWhenResumed {
+        launchAndRepeatOnStart {
             viewModel.restaurantStateFlow.collect { resource ->
                 when (resource) {
                     ResourceUi.Loading -> {

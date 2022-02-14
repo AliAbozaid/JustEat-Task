@@ -1,26 +1,20 @@
 package io.aliabozid.justeat.restaurants.domain
 
-import io.aliabozid.justeat.assets.utils.Dispatcher
-import io.aliabozid.justeat.restaurants.data.model.Restaurant
-import kotlinx.coroutines.withContext
+import io.aliabozid.justeat.restaurants.domain.model.Restaurant
 
-class FilterUseCase(
-    private val dispatcher: Dispatcher
-) {
+class FilterUseCase {
 
-    suspend fun filterRestaurant(
+    fun filterRestaurant(
         restaurants: List<Restaurant>,
         restaurantName: String?
     ): MutableList<Restaurant> {
-        return withContext(dispatcher.io()) {
-            if (restaurantName == null) return@withContext restaurants.toMutableList()
-            val updatedMapHotelsList = restaurants.filter { restaurant ->
-                restaurant.name?.contains(
-                    restaurantName,
-                    true
-                ) ?: false
-            }
-            updatedMapHotelsList.toMutableList()
+        if (restaurantName == null) return restaurants.toMutableList()
+        val updatedMapHotelsList = restaurants.filter { restaurant ->
+            restaurant.name?.contains(
+                restaurantName,
+                true
+            ) ?: false
         }
+        return updatedMapHotelsList.toMutableList()
     }
 }

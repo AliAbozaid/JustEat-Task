@@ -1,10 +1,9 @@
 package io.aliabozid.justeat.restaurants.domain
 
-import io.aliabozid.justeat.restaurants.base.DispatcherImplTest
 import io.aliabozid.justeat.restaurants.data.helper.PreferenceHelper
-import io.aliabozid.justeat.restaurants.data.model.Restaurant
-import io.aliabozid.justeat.restaurants.data.model.RestaurantStatus
-import io.aliabozid.justeat.restaurants.data.model.SortOption
+import io.aliabozid.justeat.restaurants.domain.model.Restaurant
+import io.aliabozid.justeat.restaurants.domain.model.RestaurantStatus
+import io.aliabozid.justeat.restaurants.domain.model.SortOption
 import io.aliabozid.justeat.sort.SelectedSort
 import io.mockk.coEvery
 import io.mockk.coVerify
@@ -19,7 +18,6 @@ class RestaurantChainUseCaseTest {
     private val preferenceHelper: PreferenceHelper = mockk(relaxed = true)
     private val sortUseCase: SortUseCase = mockk(relaxed = true)
     private val filterUseCase: FilterUseCase = mockk(relaxed = true)
-    private val testDispatcher = DispatcherImplTest()
     private lateinit var restaurantChainUseCase: RestaurantChainUseCase
 
     private val restaurant = Restaurant(
@@ -40,7 +38,7 @@ class RestaurantChainUseCaseTest {
     @Before
     fun setUp() {
         restaurantChainUseCase = RestaurantChainUseCase(
-            preferenceHelper, sortUseCase, filterUseCase, testDispatcher
+            preferenceHelper, sortUseCase, filterUseCase
         )
         restaurantChainUseCase.restaurants.add(restaurant)
     }

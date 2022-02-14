@@ -5,9 +5,9 @@ import io.aliabozid.justeat.restaurants.data.client.RestaurantsLocalClient
 import io.aliabozid.justeat.restaurants.data.entity.RestaurantEntity
 import io.aliabozid.justeat.restaurants.data.entity.RestaurantsEntity
 import io.aliabozid.justeat.restaurants.data.entity.SortingEntity
-import io.aliabozid.justeat.restaurants.data.repository.RestaurantRepository
 import io.aliabozid.justeat.restaurants.data.repository.RestaurantRepositoryImpl
 import io.aliabozid.justeat.restaurants.data.repository.RestaurantsErrorManager
+import io.aliabozid.justeat.restaurants.domain.repo.RestaurantRepository
 import io.mockk.coVerify
 import io.mockk.every
 import io.mockk.mockk

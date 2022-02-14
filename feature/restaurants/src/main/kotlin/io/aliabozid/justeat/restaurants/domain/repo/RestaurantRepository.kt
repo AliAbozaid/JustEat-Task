@@ -1,7 +1,7 @@
-package io.aliabozid.justeat.restaurants.data.repository
+package io.aliabozid.justeat.restaurants.domain.repo
 
 import io.aliabozid.justeat.restaurants.data.Resource
-import io.aliabozid.justeat.restaurants.data.model.Restaurant
+import io.aliabozid.justeat.restaurants.domain.model.Restaurant
 
 interface RestaurantRepository {
 
