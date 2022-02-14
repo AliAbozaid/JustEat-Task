@@ -8,6 +8,9 @@ object AppDependencies {
 	const val KOTLIN =
 		"org.jetbrains.kotlin:kotlin-stdlib-jdk7:${BuildDependenciesVersions.KOTLIN}"
 
+	const val DATA_STORE =
+		"androidx.datastore:datastore-preferences:${BuildDependenciesVersions.DATA_STORE}"
+
 	const val MOSHI =
 		"com.squareup.moshi:moshi-kotlin:${BuildDependenciesVersions.MOSHI}"
 	const val MOSHI_CODEGEN =
@@ -38,9 +41,6 @@ object AppDependencies {
 	const val ESPRESSO =
 		"androidx.test.espresso:espresso-core:${BuildDependenciesVersions.ESPRESSO}"
 
-	const val ASSERTJ =
-		"org.assertj:assertj-core:${BuildDependenciesVersions.ASSERTJ}"
-
 	// common
 	const val TIMBER =
 		"com.jakewharton.timber:timber:${BuildDependenciesVersions.TIMBER}"
@@ -52,8 +52,6 @@ object AppDependencies {
 	const val DETEKT =
 		"io.gitlab.arturbosch.detekt:detekt-gradle-plugin:${AppConfig.detektVersion}"
 
-	// coil
-	const val COIL = "io.coil-kt:coil:${BuildDependenciesVersions.COIL}"
 
 
 }

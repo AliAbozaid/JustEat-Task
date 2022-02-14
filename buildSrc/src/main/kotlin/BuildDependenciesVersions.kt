@@ -11,16 +11,15 @@ object BuildDependenciesVersions {
     const val LIFECYCLE = "2.4.0-alpha02"
     const val LIFECYCLE_EXTENSION = "2.2.0"
     const val COROUTINES = "1.5.2"
-    const val COIL = "1.1.1"
     const val APPCOMPAT = "1.3.0"
     const val MATERIAL = "1.5.0-alpha04"
     const val MOSHI = "1.13.0"
+    const val DATA_STORE = "1.0.0"
 
     const val JUNIT = "4.13.2"
     const val ANDROIDX_JUNIT = "1.1.3"
     const val ESPRESSO = "3.4.0"
     const val MOCKK = "1.10.2"
-    const val ASSERTJ = "3.17.2"
     const val COROUTINES_TEST = "1.3.9"
     const val JUPITER = "5.7.0"
 

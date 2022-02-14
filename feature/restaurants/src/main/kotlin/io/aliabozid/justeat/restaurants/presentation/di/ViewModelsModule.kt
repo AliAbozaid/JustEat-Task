@@ -9,6 +9,7 @@ val viewModelsModule = module {
     viewModel {
         RestaurantViewModel(
             restaurantUseCase = get(),
+            sortSelectionUseCase = get(),
             restaurantChainUseCase = get(),
             dispatcher = get()
         )

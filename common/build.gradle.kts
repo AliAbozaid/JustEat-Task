@@ -63,6 +63,7 @@ dependencies {
 
     api(AppDependencies.APPCOMPAT)
     api(AppDependencies.MATERIAL)
+    api(AppDependencies.DATA_STORE)
     implementation(LifecycleDependencies.LIFE_CYCLE_LIBRARIES)
     implementation(NavigationDependencies.NAVIGATION_LIBRARIES)
     implementation(AppDependencies.CONSTRAINT_LAYOUT)

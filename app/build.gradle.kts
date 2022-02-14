@@ -26,9 +26,6 @@ android {
 		versionCode = buildVersionCode
 		versionName = buildVersionName
 		testInstrumentationRunner = AppConfig.androidTestInstrumentation
-
-		// Add new languages here
-		resConfigs("en")
 	}
 
 	buildFeatures {
@@ -52,12 +49,10 @@ android {
 		getByName("debug") {
 			isDebuggable = true
 			applicationIdSuffix = ".debug"
-//            the<CrashlyticsExtension>().mappingFileUploadEnabled = false
 		}
 		getByName("release") {
 			isMinifyEnabled = true
 			signingConfig = signingConfigs.getByName("release")
-//            the<CrashlyticsExtension>().mappingFileUploadEnabled = true
 			proguardFiles(
 				getDefaultProguardFile(AppConfig.proguardConsumerRules),
 				AppConfig.proguardRules

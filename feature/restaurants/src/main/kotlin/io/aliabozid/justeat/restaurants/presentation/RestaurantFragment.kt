@@ -25,9 +25,7 @@ class RestaurantFragment : Fragment(R.layout.fragment_restaurant) {
     private val binding by viewBinding(FragmentRestaurantBinding::bind)
     private val viewModel by viewModel<RestaurantViewModel>()
     private val restaurantAdapter by lazy {
-        RestaurantAdapter(
-            viewModel.getSelectedSort()
-        )
+        RestaurantAdapter()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -90,7 +88,10 @@ class RestaurantFragment : Fragment(R.layout.fragment_restaurant) {
     }
 
     private fun setupSortOption() {
-        binding.sortType.setText(viewModel.getSelectedSort().titleResKey)
+        viewModel.selectedSortLiveData.observe(viewLifecycleOwner) {
+            binding.sortType.setText(it.titleResKey)
+            viewModel.selectedSortItem = it
+        }
         binding.sort.setOnClickListener {
             findNavController().navigate(R.id.sort_list_navigation)
         }
@@ -100,8 +101,6 @@ class RestaurantFragment : Fragment(R.layout.fragment_restaurant) {
             )
             selectedSort?.let {
                 viewModel.setSelectedSort(it)
-                restaurantAdapter.selectedSort = it
-                binding.sortType.setText(it.titleResKey)
             }
         }
     }
