@@ -61,8 +61,7 @@ class RestaurantViewModelTest {
     }
 
     @Test
-    fun `given getRestaurants when called from viewModel then get called from useCase`() {
-        restaurantViewModel.getRestaurants()
+    fun `when viewModel initiated then get called from useCase`() {
         coVerify { restaurantUseCase.getRestaurants() }
         coVerify { restaurantChainUseCase.execute(any()) }
     }

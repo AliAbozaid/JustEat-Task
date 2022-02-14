@@ -53,7 +53,6 @@ class RestaurantFragment : Fragment(R.layout.fragment_restaurant) {
     }
 
     private fun bindObservers() {
-        viewModel.getRestaurants()
         launchAndRepeatOnStart {
             viewModel.restaurantStateFlow.collect { resource ->
                 when (resource) {

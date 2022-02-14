@@ -5,14 +5,11 @@ import io.aliabozid.justeat.restaurants.R
 import io.aliabozid.justeat.restaurants.data.client.RestaurantFileError
 
 class RestaurantsErrorManager constructor(
-    private val context: Context
+	private val context: Context
 ) {
-    fun getErrorMessage(key: String): String {
-        if (errorsMap.containsKey(key))
-            if (errorsMap[key] != null)
-                return errorsMap[key]!!
-        return context.getString(R.string.default_error)
-    }
+	fun getErrorMessage(key: String): String =
+		errorsMap[key] ?: context.getString(R.string.default_error)
+
 
     private val errorsMap: Map<String, String>
         get() = mapOf(
@@ -33,5 +30,5 @@ class RestaurantsErrorManager constructor(
                 context.getString(R.string.no_restaurants_found)
             ),
 
-        )
+			)
 }
