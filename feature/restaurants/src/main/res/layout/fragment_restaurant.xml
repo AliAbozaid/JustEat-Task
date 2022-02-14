@@ -12,7 +12,7 @@
 		android:layout_height="wrap_content"
 		android:backgroundTint="@color/background"
 		android:fitsSystemWindows="true"
-		android:paddingBottom="4dp"
+		android:paddingBottom="@dimen/space_4"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toTopOf="parent">
@@ -28,9 +28,9 @@
 			style="@style/Theme.JustEat.OutlinedTextInput.Search"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:layout_marginHorizontal="16dp"
-			android:layout_marginTop="8dp"
-			android:drawablePadding="12dp"
+			android:layout_marginHorizontal="@dimen/space_16"
+			android:layout_marginTop="@dimen/space_8"
+			android:drawablePadding="@dimen/space_12"
 			app:endIconMode="clear_text"
 			app:endIconTint="@null"
 			app:startIconDrawable="@drawable/ic_search"
@@ -43,16 +43,16 @@
 				android:layout_height="wrap_content"
 				android:imeOptions="actionDone"
 				android:inputType="textCapWords"
-				android:textSize="16sp" />
+				android:textSize="@dimen/text_16" />
 		</com.google.android.material.textfield.TextInputLayout>
 	</com.google.android.material.appbar.AppBarLayout>
 
 	<TextView
 		android:id="@+id/sortType"
-		android:layout_width="0dp"
+		android:layout_width="@dimen/space_0"
 		android:layout_height="wrap_content"
-		android:layout_marginHorizontal="16dp"
-		android:layout_marginTop="16dp"
+		android:layout_marginHorizontal="@dimen/space_16"
+		android:layout_marginTop="@dimen/space_16"
 		android:textAlignment="viewStart"
 		android:textAppearance="@style/TextAppearance.JustEat.Restaurant.Sort.Title"
 		app:layout_constraintEnd_toEndOf="parent"
@@ -61,11 +61,11 @@
 
 	<androidx.recyclerview.widget.RecyclerView
 		android:id="@+id/restaurantRecyclerView"
-		android:layout_width="0dp"
-		android:layout_height="0dp"
-		android:layout_margin="16dp"
+		android:layout_width="@dimen/space_0"
+		android:layout_height="@dimen/space_0"
+		android:layout_margin="@dimen/space_16"
 		android:clipToPadding="false"
-		android:paddingVertical="16dp"
+		android:paddingVertical="@dimen/space_16"
 		app:layout_behavior="@string/appbar_scrolling_view_behavior"
 		app:layout_constraintBottom_toBottomOf="parent"
 		app:layout_constraintEnd_toEndOf="parent"
@@ -78,8 +78,8 @@
 	<ProgressBar
 		android:id="@+id/searchProgress"
 		style="?android:attr/progressBarStyle"
-		android:layout_width="24dp"
-		android:layout_height="24dp"
+		android:layout_width="@dimen/space_24"
+		android:layout_height="@dimen/space_24"
 		android:layout_gravity="center"
 		android:indeterminate="true"
 		app:layout_constraintStart_toStartOf="parent"
@@ -95,8 +95,8 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_gravity="end"
-		android:layout_marginEnd="16dp"
-		android:layout_marginBottom="16dp"
+		android:layout_marginEnd="@dimen/space_16"
+		android:layout_marginBottom="@dimen/space_16"
 		app:backgroundTint="@color/fab_bg"
 		app:layout_behavior="@string/appbar_scrolling_view_behavior"
 		app:layout_constraintBottom_toBottomOf="parent"
