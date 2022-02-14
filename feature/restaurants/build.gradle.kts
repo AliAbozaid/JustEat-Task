@@ -50,6 +50,10 @@ android {
 
 	kotlinOptions {
 		jvmTarget = JavaVersion.VERSION_11.toString()
+		freeCompilerArgs = listOf(
+			"-Xuse-experimental=kotlinx.coroutines.ExperimentalCoroutinesApi",
+			"-Xuse-experimental=kotlinx.coroutines.ObsoleteCoroutinesApi"
+		)
 	}
 
 	sourceSets {
